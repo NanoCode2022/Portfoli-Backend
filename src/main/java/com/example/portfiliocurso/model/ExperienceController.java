@@ -38,8 +38,9 @@ public class ExperienceController {
 
     Experience experience = interExperience.findExperience(id);
 
-    experience.setTitle(nuevoTitle);
+
     experience.setDescription(nuevaDescription);
+    experience.setTitle(nuevoTitle);
 
 
     interExperience.savExeperience(experience);

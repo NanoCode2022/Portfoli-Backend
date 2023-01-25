@@ -11,4 +11,6 @@ public interface IExperienceService {
     public  void savExeperience(Experience exp);
 
     public void deletExperinece(Long id);
+
+    public Experience findExperience(Long id);
 }

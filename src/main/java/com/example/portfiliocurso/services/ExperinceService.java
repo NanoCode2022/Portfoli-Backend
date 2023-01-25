@@ -1,6 +1,7 @@
 package com.example.portfiliocurso.services;
 
 import com.example.portfiliocurso.model.Experience;
+import com.example.portfiliocurso.model.Persona;
 import com.example.portfiliocurso.repository.ExperienceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,5 +28,11 @@ private ExperienceRepository experienceRepository;
     @Override
     public void deletExperinece(Long id) {
         experienceRepository.deleteById(id);
+    }
+
+    @Override
+    public Experience findExperience(Long id) {
+        Experience experience = experienceRepository.findById(id).orElse(null);
+        return experience;
     }
 }

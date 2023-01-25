@@ -30,4 +30,20 @@ public class ExperienceController {
   public void editExperience(@PathVariable Long id){
     interExperience.deletExperinece(id);
   }
+
+  @PutMapping ("/experiencia/editar/{id}")
+  public Experience editExperiences(@PathVariable Long id,
+                             @RequestParam ("description") String nuevaDescription,
+                                    @RequestParam ("title") String nuevoTitle){
+
+    Experience experience = interExperience.findExperience(id);
+
+    experience.setTitle(nuevoTitle);
+    experience.setDescription(nuevaDescription);
+
+
+    interExperience.savExeperience(experience);
+
+    return experience;
+  }
 }
